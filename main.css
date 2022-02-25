@@ -1,0 +1,143 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.language-buttons {
+    position: absolute;
+}
+
+.language-buttons div {
+    margin: 10px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.active-language-button {
+    background-color: #7FDBFF;
+}
+
+.animal-image-wrapper {
+    align-self: center;
+}
+
+.image-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 30px;
+}
+
+.image-wrapper img {
+    width: 90px;
+    height: 115px;
+    padding-top: 10px;
+}
+
+.animal-text {
+    font-size: 3rem;
+}
+
+.letters-wrapper {
+    align-self: end;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    align-content: center;
+    justify-content: center;
+    background-color: #FFDC00;
+    margin-bottom: 10px;
+}
+
+.letter-square { 
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    margin: 15px;
+    padding: 5px;
+    min-width: 35px;
+    min-height: 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.animal-name-placeholder {
+    display: grid;
+    grid-template-columns: repeat(20, auto);
+    align-content: center;
+    justify-content: center;
+}
+
+.animal-name-placeholder .letter-square {
+    margin: 5px;
+}
+
+.waviy {
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+
+/* Media queries */
+
+@media screen and (max-width: 850px) {
+    .letter-square { 
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .letters-wrapper {
+        grid-template-columns: repeat(6, auto);
+    }
+
+    .letter-square { 
+        min-width: 30px;
+        min-height: 30px;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .image-wrapper {
+        padding-bottom: 10px;
+    }
+
+    .animal-text {
+        font-size: 1.6rem;
+    }
+
+    .letter-square { 
+        min-width: 25px;
+        min-height: 25px;
+        font-size: 1.6rem;
+        margin: 10px;
+    }
+
+    .animal-name-placeholder .letter-square {
+        margin: 5px;
+    }
+}
+
+
+@keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+}
+
+
+
