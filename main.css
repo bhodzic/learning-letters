@@ -7,21 +7,34 @@ body {
     padding: 0px;
 }
 
-.language-buttons {
+.menu {
     position: absolute;
 }
 
-.language-buttons div {
+.menu #select-language {
     margin: 10px;
-    border: 2px solid black;
-    text-align: center;
-    border-radius: 10px;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.menu #select-language:focus {
+    outline: none;
+}
+
+.menu button {
+    display: block;
+    margin: 10px;
+    border: none;
+    background-color: #f44336;
+    color: white;
     padding: 5px;
+    text-align: center;
+    min-width: 70px;
     cursor: pointer;
 }
 
-.active-language-button {
-    background-color: #7FDBFF;
+.menu .active-option-button {
+    background-color: #4CAF50;
 }
 
 .animal-image-wrapper {
@@ -56,7 +69,7 @@ body {
     margin-bottom: 10px;
 }
 
-.letter-square { 
+.letter-square {
     display: grid;
     align-content: center;
     justify-content: center;
@@ -85,13 +98,17 @@ body {
 .waviy {
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
-    
-  }
+
+}
+
+.hide-with-opacity {
+    opacity: 0;
+}
 
 /* Media queries */
 
 @media screen and (max-width: 850px) {
-    .letter-square { 
+    .letter-square {
         padding: 0px;
     }
 }
@@ -101,7 +118,7 @@ body {
         grid-template-columns: repeat(6, auto);
     }
 
-    .letter-square { 
+    .letter-square {
         min-width: 30px;
         min-height: 30px;
         font-size: 1.6rem;
@@ -117,7 +134,7 @@ body {
         font-size: 1.6rem;
     }
 
-    .letter-square { 
+    .letter-square {
         min-width: 25px;
         min-height: 25px;
         font-size: 1.6rem;
@@ -131,13 +148,14 @@ body {
 
 
 @keyframes waviy {
-    0%,40%,100% {
-      transform: translateY(0)
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0)
     }
+
     20% {
-      transform: translateY(-20px)
+        transform: translateY(-20px)
     }
 }
-
-
-

@@ -66,3 +66,16 @@ const animals = [{
     cirilica: 'ЛИСИЦА',
     alfabet: 'FOX'
 }];
+
+const optionText = {
+    image: {
+        latinica: 'SLIKA',
+        cirilica: 'СЛИКА',
+        alfabet: 'IMAGE'
+    },
+    text: {
+        latinica: 'TEKST',
+        cirilica: 'TEKCT',
+        alfabet: 'TEXT'
+    }
+}

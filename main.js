@@ -55,6 +55,11 @@ $(document).ready(function () {
         }
     }
 
+    function setOptionText(letterType) {
+        $('#image-option').text(optionText.image[letterType]);
+        $('#text-option').text(optionText.text[letterType]);
+    }
+
     function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -71,6 +76,7 @@ $(document).ready(function () {
     let timeoutID;
 
     shuffleArray(animals);
+    setOptionText(letterType);
     setKeboardLetters(letterType);
     setNewAnimal(animals[currentIndex], letterType);
 
@@ -118,17 +124,23 @@ $(document).ready(function () {
         $(this).css({ 'background-color': 'white' });
     });
 
-    $('.js-language-button').on('click', function () {
-        if (!$(this).hasClass('active-language-button')) {
-            $('.js-language-button').removeClass('active-language-button');
-            $(this).addClass('active-language-button');
-            letterType = $(this).attr('data-letter-type');
-            // currentIndex = 0;
-            clearTimeout(timeoutID);
-            setKeboardLetters(letterType);
-            setNewAnimal(animals[currentIndex], letterType);
+    $('#select-language').change('click', function () {
+        letterType = $('#select-language').val();
+        // currentIndex = 0;
+        clearTimeout(timeoutID);
+        setOptionText(letterType);
+        setKeboardLetters(letterType);
+        setNewAnimal(animals[currentIndex], letterType);
+    });
+    $('.js-option-button').on('click', function () {
+        $(this).toggleClass('active-option-button');
+        let optionType = $(this).attr('data-option-type');
+        if (optionType == 'image') {
+            $('.js-animal-image').toggleClass('hide-with-opacity');
+        } else {
+            $('.js-animal-name').toggleClass('hide-with-opacity');
         }
-
+        // $(this).addClass('active-language-button');
     });
 
 });
