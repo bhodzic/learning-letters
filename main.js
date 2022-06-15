@@ -31,8 +31,8 @@ $(document).ready(function () {
     function getLetterArray(text, letterType) {
         let textArray = [];
         for (let i = 0; i < text.length; i++) {
-            if (letterType == 'latinica' && text[i + 1] && (text[i] == 'L' || text[i] == 'N') && (text[i + 1] == 'J')) {
-                textArray.push(text[i] + 'J');
+            if (letterType == 'latinica' && text[i + 1] && (text[i] == 'L' || text[i] == 'N') && (text[i + 1] == 'j')) {
+                textArray.push(text[i] + 'j');
                 i++;
             } else {
                 textArray.push(text[i]);
