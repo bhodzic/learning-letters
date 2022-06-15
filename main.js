@@ -55,11 +55,22 @@ $(document).ready(function () {
         }
     }
 
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
 
 
     let currentIndex = 0;
     let letterType = 'cirilica';
+    let timeoutID;
 
+    shuffleArray(animals);
     setKeboardLetters(letterType);
     setNewAnimal(animals[currentIndex], letterType);
 
@@ -89,7 +100,7 @@ $(document).ready(function () {
                     audio.play();
                 }
 
-                setTimeout(function () {
+                timeoutID = setTimeout(function () {
                     currentIndex++;
                     if (currentIndex >= animals.length) {
                         currentIndex = 0;
@@ -108,12 +119,16 @@ $(document).ready(function () {
     });
 
     $('.js-language-button').on('click', function () {
-        $('.js-language-button').removeClass('active-language-button');
-        $(this).addClass('active-language-button')
-        letterType = $(this).attr('data-letter-type');
-        currentIndex = 0;
-        setKeboardLetters(letterType);
-        setNewAnimal(animals[currentIndex], letterType);
+        if (!$(this).hasClass('active-language-button')) {
+            $('.js-language-button').removeClass('active-language-button');
+            $(this).addClass('active-language-button');
+            letterType = $(this).attr('data-letter-type');
+            // currentIndex = 0;
+            clearTimeout(timeoutID);
+            setKeboardLetters(letterType);
+            setNewAnimal(animals[currentIndex], letterType);
+        }
+
     });
 
 });
