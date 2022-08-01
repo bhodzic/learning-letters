@@ -81,53 +81,58 @@ $(document).ready(function () {
     setNewAnimal(animals[currentIndex], letterType);
 
     $('.js-letter-square').click(function () {
-        if ($(this).text()) {
-            let animalPlaceHolderLetters = $('.js-animal-name-placeholder-letter');
-            for (let i = 0; i < animalPlaceHolderLetters.length; i++) {
-                if (animalPlaceHolderLetters.eq(i).text() == '') {
-                    animalPlaceHolderLetters.eq(i).text($(this).text());
-                    setTheLetterColor(i);
-                    break;
-                }
-            }
-            let correctAnswers = 0;
-
-            for (let i = 0; i < animalPlaceHolderLetters.length; i++) {
-                if (animalPlaceHolderLetters.eq(i).attr('data-answer') == 'correct') {
-                    correctAnswers++;
-                }
-            }
-
-            if (correctAnswers == animalPlaceHolderLetters.length) {
-                animalPlaceHolderLetters.addClass('waviy');
-
-                if (letterType == 'alfabet') {
-                    var audio = new Audio('./audio/' + animals[currentIndex].alfabet.toLowerCase() + '.mp3');
-                    audio.play();
-                }
-
-                timeoutID = setTimeout(function () {
-                    currentIndex++;
-                    if (currentIndex >= animals.length) {
-                        currentIndex = 0;
+        if (!timeoutID) {
+            if ($(this).text()) {
+                let animalPlaceHolderLetters = $('.js-animal-name-placeholder-letter');
+                for (let i = 0; i < animalPlaceHolderLetters.length; i++) {
+                    if (animalPlaceHolderLetters.eq(i).text() == '') {
+                        animalPlaceHolderLetters.eq(i).text($(this).text());
+                        setTheLetterColor(i);
+                        break;
                     }
-                    animalPlaceHolderLetters.removeClass('waviy');
-                    setNewAnimal(animals[currentIndex], letterType);
-                }, 5000);
+                }
+                let correctAnswers = 0;
+
+                for (let i = 0; i < animalPlaceHolderLetters.length; i++) {
+                    if (animalPlaceHolderLetters.eq(i).attr('data-answer') == 'correct') {
+                        correctAnswers++;
+                    }
+                }
+
+                if (correctAnswers == animalPlaceHolderLetters.length) {
+                    animalPlaceHolderLetters.addClass('waviy');
+
+                    if (letterType == 'alfabet') {
+                        var audio = new Audio('./audio/' + animals[currentIndex].alfabet.toLowerCase() + '.mp3');
+                        audio.play();
+                    }
+
+                    timeoutID = setTimeout(function () {
+                        currentIndex++;
+                        if (currentIndex >= animals.length) {
+                            currentIndex = 0;
+                        }
+                        animalPlaceHolderLetters.removeClass('waviy');
+                        setNewAnimal(animals[currentIndex], letterType);
+                        timeoutID = null;
+                    }, 5000);
+                }
             }
         }
-
     });
 
     $('.js-animal-name-placeholder').on('click', '.js-animal-name-placeholder-letter', function () {
-        $(this).text('');
-        $(this).css({ 'background-color': 'white' });
+        if (!timeoutID) {
+            $(this).text('');
+            $(this).css({ 'background-color': 'white' });
+        }
     });
 
     $('#select-language').change('click', function () {
         letterType = $('#select-language').val();
         // currentIndex = 0;
         clearTimeout(timeoutID);
+        timeoutID = null;
         setOptionText(letterType);
         setKeboardLetters(letterType);
         setNewAnimal(animals[currentIndex], letterType);
@@ -140,7 +145,6 @@ $(document).ready(function () {
         } else {
             $('.js-animal-name').toggleClass('hide-with-opacity');
         }
-        // $(this).addClass('active-language-button');
     });
 
 });
