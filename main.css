@@ -75,8 +75,8 @@ body {
     justify-content: center;
     margin: 15px;
     padding: 5px;
-    min-width: 35px;
-    min-height: 35px;
+    min-width: 38px;
+    min-height: 38px;
     border: 2px solid black;
     border-radius: 5px;
     font-size: 2rem;
@@ -135,10 +135,8 @@ body {
     }
 
     .letter-square {
-        min-width: 25px;
-        min-height: 25px;
         font-size: 1.6rem;
-        margin: 10px;
+        margin: 8px;
     }
 
     .animal-name-placeholder .letter-square {
