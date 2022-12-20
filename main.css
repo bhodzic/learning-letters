@@ -60,7 +60,7 @@ body {
 }
 
 .letters-wrapper {
-    align-self: end;
+    align-self: center;
     display: grid;
     grid-template-columns: repeat(10, auto);
     align-content: center;
