@@ -57,7 +57,6 @@ $(document).ready(function () {
 
     function setOptionText(letterType) {
         $('#image-option').text(optionText.image[letterType]);
-        $('#text-option').text(optionText.text[letterType]);
     }
 
     function shuffleArray(array) {
@@ -137,8 +136,7 @@ $(document).ready(function () {
         setKeboardLetters(letterType);
         setNewAnimal(animals[currentIndex], letterType);
     });
-    $('#text-option').on('click', function () {
-        $(this).toggleClass('active-option-button');
+    $('#text-toggle').on('change', function () {
         $('.js-animal-name').toggleClass('hide-with-opacity');
     });
 
