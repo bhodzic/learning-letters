@@ -47,10 +47,10 @@ $(document).ready(function () {
         let animalNameArray = getLetterArray(animalName, letterType);
 
         if (animalNameArray[i] == animalPlaceHolderLetters.eq(i).text()) {
-            animalPlaceHolderLetters.eq(i).css({ 'background-color': '#01FF70' });
+            animalPlaceHolderLetters.eq(i).addClass('correct-bgr');
             animalPlaceHolderLetters.eq(i).attr('data-answer', 'correct');
         } else {
-            animalPlaceHolderLetters.eq(i).css({ 'background-color': '#FF4136' });
+            animalPlaceHolderLetters.eq(i).addClass('error-bgr');
             animalPlaceHolderLetters.eq(i).attr('data-answer', 'error');
         }
     }
@@ -122,9 +122,9 @@ $(document).ready(function () {
     });
 
     $('.js-animal-name-placeholder').on('click', '.js-animal-name-placeholder-letter', function () {
-        if (!timeoutID) {
+        if (!timeoutID && !$(this).hasClass('correct-bgr') && $(this).text()) {
             $(this).text('');
-            $(this).css({ 'background-color': 'white' });
+            $(this).removeClass('error-bgr');
         }
     });
 
@@ -137,14 +137,9 @@ $(document).ready(function () {
         setKeboardLetters(letterType);
         setNewAnimal(animals[currentIndex], letterType);
     });
-    $('.js-option-button').on('click', function () {
+    $('#text-option').on('click', function () {
         $(this).toggleClass('active-option-button');
-        let optionType = $(this).attr('data-option-type');
-        if (optionType == 'image') {
-            $('.js-animal-image').toggleClass('hide-with-opacity');
-        } else {
-            $('.js-animal-name').toggleClass('hide-with-opacity');
-        }
+        $('.js-animal-name').toggleClass('hide-with-opacity');
     });
 
 });
