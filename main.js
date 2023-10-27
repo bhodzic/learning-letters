@@ -62,10 +62,6 @@ $(document).ready(function () {
         }
     }
 
-    function setOptionText(letterType) {
-        $('#image-option').text(optionText.image[letterType]);
-    }
-
     function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -82,7 +78,6 @@ $(document).ready(function () {
     let timeoutID;
 
     shuffleArray(animals);
-    setOptionText(letterType);
     setKeboardLetters(letterType);
     setNewAnimal(animals[currentIndex], letterType);
 
@@ -140,7 +135,6 @@ $(document).ready(function () {
         // currentIndex = 0;
         clearTimeout(timeoutID);
         timeoutID = null;
-        setOptionText(letterType);
         setKeboardLetters(letterType);
         setNewAnimal(animals[currentIndex], letterType);
     });

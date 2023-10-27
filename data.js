@@ -57,8 +57,8 @@ const animals = [{
     alfabet: 'LION'
 },
 {
-    latinica: 'SVINjA',
-    cirilica: 'СВИЊА',
+    latinica: 'PRASE',
+    cirilica: 'ПРАСЕ',
     alfabet: 'PIG'
 },
 {
@@ -89,17 +89,30 @@ const animals = [{
     latinica: 'JEDNOROG',
     cirilica: 'ЈЕДНОРОГ',
     alfabet: 'UNICORN'
+},
+{
+    latinica: 'AJKULA',
+    cirilica: 'АЈКУЛА',
+    alfabet: 'SHARK'
+},
+{
+    latinica: 'MAČKA',
+    cirilica: 'МАЧКА',
+    alfabet: 'CAT'
+},
+{
+    latinica: 'RIBA',
+    cirilica: 'РИБА',
+    alfabet: 'FISH'
+},
+{
+    latinica: 'VEVERICA',
+    cirilica: 'ВЕВЕРИЦА',
+    alfabet: 'SQUIRREL'
+},
+{
+    latinica: 'KIT',
+    cirilica: 'КИТ',
+    alfabet: 'WHALE'
 }];
 
-const optionText = {
-    image: {
-        latinica: 'SLIKA',
-        cirilica: 'СЛИКА',
-        alfabet: 'IMAGE'
-    },
-    text: {
-        latinica: 'TEKST',
-        cirilica: 'TEKCT',
-        alfabet: 'TEXT'
-    }
-}
