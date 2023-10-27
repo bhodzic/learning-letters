@@ -15,70 +15,64 @@
 <body>
     <main>
         <div class="content-wrapper">
-        <div class="menu">
-            <div class="option-wrapper">
-                <select id="select-language">
-                    <option value="cirilica">СРПСКИ</option>
-                    <option value="latinica">SRPSKI</option>
-                    <option value="alfabet">ENGLISH</option>
-                </select>
+            <div class="menu">
+                <button type="button" class="js-lang-btn lang-btn active-lang-btn" data-letter-type="cirilica">СРП</button>
+                <button type="button" class="js-lang-btn lang-btn" data-letter-type="latinica">SRP</button>
+                <button type="button" class="js-lang-btn lang-btn"data-letter-type="alfabet">ENG</button>
             </div>
-            <div class="link-wrapper">
-                <a href="https://hotpot.ai/art-generator" target="_blank">AI Image Generator</a>
+            <div class="animal-image-wrapper">
+                <div class="image-wrapper">
+                    <div class="link-wrapper">
+                        <a href="https://hotpot.ai/art-generator" target="_blank">AI Image Generator</a>
+                    </div>
+                    <img src="" class="js-animal-image">
+                    <div class="js-animal-name animal-text"></div>
+                    <label class="switch">
+                        <input id="text-toggle" type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="js-animal-name-placeholder animal-name-placeholder"></div>
             </div>
-        </div>
-        <div class="animal-image-wrapper">
-            <div class="image-wrapper">
-                <img src="" class="js-animal-image">
-                <div class="js-animal-name animal-text"></div>
-                <label class="switch">
-                    <input id="text-toggle" type="checkbox" checked>
-                    <span class="slider"></span>
-                  </label>
-            </div>
-            <div class="js-animal-name-placeholder animal-name-placeholder">
-
-            </div>
-        </div>
-        <div class="keyboard-wrapper">
-            <div class="keyboard-row">        
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-            </div>
-            <div class="keyboard-row">
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-            </div>
-            <div class="keyboard-row">
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
-                <div class="js-letter-square letter-square"></div>
+            <div class="keyboard-wrapper">
+                <div class="keyboard-row">        
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                    <div class="js-letter-square letter-square"></div>
+                </div>
             </div>
         </div>
-    </div>
     </main>
 </body>
 

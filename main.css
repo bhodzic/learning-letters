@@ -1,22 +1,6 @@
-body {
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-}
-
 .content-wrapper {
     max-width: 600px;
     margin: 0px auto;
-}
-
-.option-wrapper {
-    display: flex;
-}
-
-
-.link-wrapper {
-    display: grid;
-    align-items: center;
 }
 
 .link-wrapper a, .link-wrapper a:visited {
@@ -25,19 +9,36 @@ body {
 
 .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.menu #select-language {
+.menu .lang-btn {
+    background: #2196F3;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
     border: none;
+    padding: 4px 8px;
+    cursor: pointer;
 }
 
-.menu #select-language:focus {
-    outline: none;
+.menu .lang-btn.active-lang-btn {
+    background: #04AA6D;
+    cursor: default;
+}
+
+.menu .lang-btn:not(.active-lang-btn):hover {
+    background: #7CB9E8;
+}
+
+.menu button:nth-child(2){
+    margin: 0px 10px;
 }
 
 .animal-image-wrapper {
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .image-wrapper {
@@ -45,12 +46,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    padding-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .image-wrapper img {
     width: 220px;
-    padding-top: 10px;
 }
 
 .animal-text {
@@ -89,7 +89,6 @@ body {
     grid-template-columns: repeat(20, auto);
     align-content: center;
     justify-content: center;
-    margin-bottom: 60px;
 }
 
 .animal-name-placeholder .letter-square {
@@ -125,14 +124,6 @@ body {
     .animal-text {
         font-size: 2rem;
     }
-
-    .animal-name-placeholder {
-        margin-bottom: 20px;
-    }
-
-    .animal-image-wrapper {
-        margin-top: 15px;
-    }
 }
 
 
@@ -153,11 +144,6 @@ body {
     .image-wrapper img {
         width: 130px;
     }
-
-    .animal-name-placeholder {
-        margin-bottom: 20px;
-    }
-
 }
 
 

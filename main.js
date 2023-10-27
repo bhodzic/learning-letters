@@ -127,8 +127,10 @@ $(document).ready(function () {
         }
     });
 
-    $('#select-language').change('click', function () {
-        letterType = $('#select-language').val();
+    $('.js-lang-btn').on('click', function () {
+        $('.js-lang-btn').removeClass('active-lang-btn');
+        $(this).addClass('active-lang-btn');
+        letterType = $(this).attr('data-letter-type');
         // currentIndex = 0;
         clearTimeout(timeoutID);
         timeoutID = null;
