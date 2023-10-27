@@ -80,8 +80,16 @@
     padding: 3px;
 }
 
-.letter-square:not(.js-animal-name-placeholder-letter):hover {
+.letter-square.js-empty-letter, .letter-square.correct-bgr {
+    cursor: default;
+}
+
+.letter-square:not(.js-animal-name-placeholder-letter):not(.js-empty-letter):hover {
     background: #c4cbdd;
+}
+
+.letter-square.error-bgr:hover {
+    background: lightcoral;
 }
 
 .animal-name-placeholder {

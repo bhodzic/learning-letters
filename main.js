@@ -7,8 +7,15 @@ $(document).ready(function () {
 
         let keyboardLetters = $('.js-letter-square');
         for (let i = 0; i < keyboardLetters.length; i++) {
-            let letter = (letters[i]) ? letters[i] : '';
-            keyboardLetters.eq(i).text(letter);
+            if (letterType == 'alfabet' && i >= 20) {
+                if ((i == 20 || i == 21 || i == 28 || i == 29)) {
+                    keyboardLetters.eq(i).text('').addClass('js-empty-letter');
+                } else {
+                    keyboardLetters.eq(i).text(letters[i-2]);
+                }
+            } else {
+                keyboardLetters.eq(i).text(letters[i]).removeClass('js-empty-letter');
+            }
         }
 
     }
@@ -19,7 +26,7 @@ $(document).ready(function () {
         let animalName = animal[letterType]
         for (let i = 0; i < animalNameData.length; i++) {
             let waviyIndex = i + 1;
-            animalNamePlaceholder += '<div class="js-animal-name-placeholder-letter letter-square" style="--i:' + waviyIndex + '"></div>';
+            animalNamePlaceholder += '<div class="js-animal-name-placeholder-letter js-empty-letter letter-square" style="--i:' + waviyIndex + '"></div>';
         }
 
         $('.js-animal-name').html(animalName);
@@ -85,7 +92,7 @@ $(document).ready(function () {
                 let animalPlaceHolderLetters = $('.js-animal-name-placeholder-letter');
                 for (let i = 0; i < animalPlaceHolderLetters.length; i++) {
                     if (animalPlaceHolderLetters.eq(i).text() == '') {
-                        animalPlaceHolderLetters.eq(i).text($(this).text());
+                        animalPlaceHolderLetters.eq(i).text($(this).text()).removeClass('js-empty-letter');
                         setTheLetterColor(i);
                         break;
                     }
@@ -122,8 +129,7 @@ $(document).ready(function () {
 
     $('.js-animal-name-placeholder').on('click', '.js-animal-name-placeholder-letter', function () {
         if (!timeoutID && !$(this).hasClass('correct-bgr') && $(this).text()) {
-            $(this).text('');
-            $(this).removeClass('error-bgr');
+            $(this).text('').addClass('js-empty-letter').removeClass('error-bgr');
         }
     });
 
